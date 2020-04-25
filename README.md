@@ -54,12 +54,12 @@ Dependencies are managed using [CocoaPods](https://cocoapods.org/).
 
 ### For Apple Xcode - Xcode - Apple Developer
 
-Simply install the pods and open the .xcworkspace file to see the project in Xcode.
+Simply install the pods from Podfile in project folder  
 
 ```
 $ pod install
-$ open your-project.xcworkspace
 ```
+open the .xcworkspace file to see the project in VS code to open your-project.xcworkspace
 
 ### For Non-Apple Xcode Developer && Using Visual Studio Code in Ubuntu
 
@@ -79,19 +79,7 @@ Further when installing CocoaPods
 $ sudo apt-get install gem
 $ sudo gem install cocoapods
 ```
-Create a Podfile if you don't have one: (at your project folder only)
-
-```
-$ pod init
-```
-Open your Podfile and add:
-```
-# add the Firebase pod for Google Analytics
-pod 'Firebase/Analytics'
-# add pods for any other desired Firebase products
-# https://firebase.google.com/docs/ios/setup#available-pods
-```
-Save the file and run:
+Simply install the pods and open the .xcworkspace file to see the project in Xcode.
 
 ```
 $ pod install
