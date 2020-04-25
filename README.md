@@ -77,7 +77,11 @@ Further when installing CocoaPods
 $ sudo apt-get install gem
 $ sudo gem install cocoapods
 ```
-
+Analyzing and Installing dependencies (at your project folder only)
+```
+$ pod install
+$ open your-project.xcworkspace
+```
 
 ## Contributing
 
