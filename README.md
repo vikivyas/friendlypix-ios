@@ -12,17 +12,6 @@ Use FriendlyPix to:
 
 <img src="https://raw.githubusercontent.com/firebase/friendlypix-ios/master/friendly-pix.png" width="375">
 
-## Initial setup, build tools and dependencies
-
-Friendly Pix iOS is built using Swift and [Firebase](https://firebase.google.com/docs/ios/setup). The Auth flow is built using [Firebase-UI](https://github.com/firebase/firebaseui-ios). Dependencies are managed using [CocoaPods](https://cocoapods.org/). Additionally server-side micro-services are built on [Cloud Functions for Firebase](https://firebase.google.com/docs/functions).
-
-Simply install the pods and open the .xcworkspace file to see the project in Xcode.
-
-```
-$ pod install
-$ open your-project.xcworkspace
-```
-
 ## Create Firebase Project
 
 1. Create a Firebase project using the [Firebase Console](https://firebase.google.com/console).
@@ -53,10 +42,41 @@ $ open your-project.xcworkspace
 - Run the app on your device or simulator.
     - Select **Sign In** and select Facebook to begin.
 
-
 ## Requirements
 
 The mobile FriendlyPix app need the Cloud Functions, the Realtime Database rules and the Cloud Storage rules to be deployed to work properly. You can find instructions at [FriendlyPix Web Repository](https://github.com/firebase/friendlypix-web/blob/master/README.md#mobile-apps).
+
+## Initial setup, build tools and dependencies
+
+Friendly Pix iOS is built using Swift and [Firebase](https://firebase.google.com/docs/ios/setup). The Auth flow is built using [Firebase-UI](https://github.com/firebase/firebaseui-ios). Dependencies are managed using [CocoaPods](https://cocoapods.org/). Additionally server-side micro-services are built on [Cloud Functions for Firebase](https://firebase.google.com/docs/functions).
+
+### For Apple Xcode - Xcode - Apple Developer
+
+Simply install the pods and open the .xcworkspace file to see the project in Xcode.
+
+```
+$ pod install
+$ open your-project.xcworkspace
+```
+
+### For Non-Apple Xcode Developer && Using Visual Studio Code in Ubuntu
+
+CocoaPods is built with Ruby and is installable with the default Ruby available on Ubuntu. We recommend you use the default ruby.
+
+```
+$ sudo apt update
+$ sudo apt install ruby-full
+$ ruby --version
+```
+The output will look something like this:
+```
+ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux-gnu]
+```
+Further when installing CocoaPods
+```
+$ sudo apt-get install gem
+$ sudo gem install cocoapods
+```
 
 
 ## Contributing
