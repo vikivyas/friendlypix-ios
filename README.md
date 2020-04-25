@@ -12,10 +12,14 @@ Use FriendlyPix to:
 
 <img src="https://raw.githubusercontent.com/firebase/friendlypix-ios/master/friendly-pix.png" width="375">
 
+## Requirements
+
+The mobile FriendlyPix app need the Cloud Functions, the Realtime Database rules and the Cloud Storage rules to be deployed to work properly. You can find instructions at [FriendlyPix Web Repository](https://github.com/firebase/friendlypix-web/blob/master/README.md#mobile-apps).
+
 ## Create Firebase Project
 
-1. Create a Firebase project using the [Firebase Console](https://firebase.google.com/console).
-1. To add the FriendlyPix app to a Firebase project, use the bundleID `com.google.firebase.friendlypix`.
+1. Create a iOS App in your Firebase project using the [Firebase Console](https://firebase.google.com/console).
+1. To add the FriendlyPix app to a Firebase project, use the bundleID `com.yourCompanyName.YourAppName`.
 1. Download the generated `GoogleService-Info.plist` file, and copy it to the root directory of this app.
 
 ### Google Sign In Setup
@@ -30,7 +34,7 @@ Use FriendlyPix to:
 ### Facebook Login Setup
 - Go to the [Facebook Developers Site](https://developers.facebook.com) and follow all
   instructions to set up a new iOS app. When asked for a bundle ID, use
-  `com.google.firebase.quickstart.AuthenticationExample`.
+  `com.yourCompanyName.YourAppName.AuthenticationExample`.
 - Go to the [Firebase Console](https://console.firebase.google.com) and navigate to your project:
   - Select the **Auth** panel and then click the **Sign In Method** tab.
   - Click **Facebook** and turn on the **Enable** switch, then click **Save**.
@@ -42,13 +46,11 @@ Use FriendlyPix to:
 - Run the app on your device or simulator.
     - Select **Sign In** and select Facebook to begin.
 
-## Requirements
-
-The mobile FriendlyPix app need the Cloud Functions, the Realtime Database rules and the Cloud Storage rules to be deployed to work properly. You can find instructions at [FriendlyPix Web Repository](https://github.com/firebase/friendlypix-web/blob/master/README.md#mobile-apps).
-
 ## Initial setup, build tools and dependencies
 
-Friendly Pix iOS is built using Swift and [Firebase](https://firebase.google.com/docs/ios/setup). The Auth flow is built using [Firebase-UI](https://github.com/firebase/firebaseui-ios). Dependencies are managed using [CocoaPods](https://cocoapods.org/). Additionally server-side micro-services are built on [Cloud Functions for Firebase](https://firebase.google.com/docs/functions).
+Friendly Pix iOS is built using Swift and [Firebase](https://firebase.google.com/docs/ios/setup). The Auth flow is built using [Firebase-UI](https://github.com/firebase/firebaseui-ios). Additionally server-side micro-services are built on [Cloud Functions for Firebase](https://firebase.google.com/docs/functions).
+
+Dependencies are managed using [CocoaPods](https://cocoapods.org/). 
 
 ### For Apple Xcode - Xcode - Apple Developer
 
@@ -77,11 +79,25 @@ Further when installing CocoaPods
 $ sudo apt-get install gem
 $ sudo gem install cocoapods
 ```
-Analyzing and Installing dependencies (at your project folder only)
+Create a Podfile if you don't have one: (at your project folder only)
+
+```
+$ pod init
+```
+Open your Podfile and add:
+```
+# add the Firebase pod for Google Analytics
+pod 'Firebase/Analytics'
+# add pods for any other desired Firebase products
+# https://firebase.google.com/docs/ios/setup#available-pods
+```
+Save the file and run:
+
 ```
 $ pod install
-$ open your-project.xcworkspace
 ```
+
+This creates an .xcworkspace file for your app. Use this file for all future development on your application.
 
 ## Contributing
 
